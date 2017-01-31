@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  background: linear-gradient(45deg, #FBE7C5, #F5CAC3);
+}
+
+.container, .button, .nav {
+  position: absolute;
+}
+
+.container {
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 200px;
+}
+
+#toggle {
+  display: none;
+}
+
+.button {
+  z-index: 999;
+  width: 43px;
+  height: 43px;
+  background: #F28482;
+  border-radius: 100%;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 1px 3px 10px 0 rgba(0, 0, 0, 0.3);
+}
+.button:before {
+  position: absolute;
+  top: 20px;
+  left: 9px;
+  content: '';
+  width: 25px;
+  height: 2px;
+  background: #FFF;
+  transform: rotate(90deg);
+}
+.button:after {
+  position: absolute;
+  top: 20px;
+  left: 9px;
+  content: '';
+  width: 25px;
+  height: 2px;
+  background: #FFF;
+}
+
+.nav {
+  transform: translateY(-10%);
+  opacity: 0;
+  top: 13px;
+  left: -50px;
+  transition: all 0.8s ease-in-out;
+  background: #FFF;
+  width: 150px;
+  border-radius: 5px;
+  transform: translateY(0%);
+  box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.nav a {
+  text-align: center;
+  display: block;
+  margin: 20px 0;
+  color: #F28482;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#toggle:checked ~ .nav {
+  opacity: 1;
+  transform: translateY(10%);
+}
+
+#toggle:checked ~ .button {
+  transform: rotate(135deg);
+  box-shadow: 0 0 0 0 transparent;
+}
